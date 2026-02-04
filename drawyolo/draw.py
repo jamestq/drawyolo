@@ -129,7 +129,7 @@ def draw_box_on_image_with_labels(
 
     # Get Labels
     labels = Path(labels)
-    labels = labels.read_text().strip().split("\n") if labels.exists() else []
+    labels = labels.read_text().strip().splitlines() if labels.exists() else []
     for line in labels:
         staff = line.split()
         class_idx = int(staff[0])
